@@ -36,6 +36,8 @@ func setupRouter() *gin.Engine {
 	//Membuat router baru
 	r := gin.Default()
 
+	r.Use(middlewares.CORS())
+
 	//Membuat route untuk selamat datang
 	r.GET("/", func(c *gin.Context) {
 		c.String(200, "Selamat Datang!!")
